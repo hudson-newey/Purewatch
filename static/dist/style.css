@@ -1,0 +1,16 @@
+html {
+  position: relative;
+  background-color: #020012;
+}
+html body {
+  position: absolute;
+  background-color: #020022 !important;
+  color: #c200c2;
+  width: 70%;
+  left: 15%;
+  top: 5%;
+}
+html body .action-area {
+  margin: auto;
+  width: 80%;
+}

@@ -1,0 +1,23 @@
+$primary_color: #c200c2;
+$background_color: #020022;
+$dark_background_color: #020012;
+
+html {
+  position: relative;
+  background-color: $dark_background_color;
+
+  body {
+    position: absolute;
+    background-color: $background_color !important;
+    color: $primary_color;
+  
+    width: 70%;
+    left: 15%;
+    top: 5%;
+
+    .action-area {
+      margin: auto;
+      width: 80%;
+    }
+  }
+}
