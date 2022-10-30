@@ -18,11 +18,13 @@
   <body>
     <h1 class="display-2">Purewatch</h1> <br>
     
-    <div class="action-area">
+    <div class="aligned-middle">
       <h2>Input YouTube Link</h2>
 
-      <input id="youtube-link-input" type="text" class="form-control form-control-lg" placeholder="Input YouTube Link" />
-      <button type="submit" class="btn btn-lg btn-outline-primary" onclick="openSearch();">Open</button>
+      <div class="action-area">
+        <input id="youtube-link-input" type="text" class="form-control form-control-lg" onkeyup="isEnter(event);" placeholder="Input YouTube Link" />
+        <button type="submit" class="btn btn-lg btn-outline-primary" onclick="openSearch();">Open</button>
+      </div>
     </div>
   </body>
 </html>

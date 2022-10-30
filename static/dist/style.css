@@ -10,7 +10,18 @@ html body {
   left: 15%;
   top: 5%;
 }
-html body .action-area {
+html body .aligned-middle {
   margin: auto;
   width: 80%;
+}
+
+.action-area {
+  display: flex;
+  justify-content: space-between;
+}
+.action-area button {
+  width: 80px;
+}
+.action-area input {
+  width: calc(100% - 80px);
 }

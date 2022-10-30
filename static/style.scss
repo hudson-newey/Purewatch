@@ -15,9 +15,22 @@ html {
     left: 15%;
     top: 5%;
 
-    .action-area {
+    .aligned-middle {
       margin: auto;
       width: 80%;
     }
+  }
+}
+
+.action-area {
+  display: flex;
+  justify-content:space-between;
+
+  button {
+    width: 80px;
+  }
+
+  input {
+    width: calc(100% - 80px)
   }
 }
