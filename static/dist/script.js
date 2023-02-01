@@ -1,4 +1,4 @@
-var baseViewerURL = "https://www.youtube-nocookie.com/embed";
+var baseViewerURL = "https://www.youtube-nocookie.com/embed/";
 (function () {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
@@ -7,10 +7,25 @@ var baseViewerURL = "https://www.youtube-nocookie.com/embed";
         window.location.href = baseViewerURL + "/" + videoId;
     }
 })();
+var openMethodDropdown = function () { return document.getElementById("open-method"); };
 var openSearch = function () {
-    var _a;
-    var youtubeVideoID = (_a = document.getElementById("youtube-link-input")) === null || _a === void 0 ? void 0 : _a.innerText.replace("https://www.youtube.com/watch?v=", "");
-    openPopup(baseViewerURL + "/" + youtubeVideoID);
+    var _a, _b;
+    var openMethod = (_a = openMethodDropdown()) === null || _a === void 0 ? void 0 : _a.value;
+    var youtubeVideoID = (_b = document.getElementById("youtube-link-input")) === null || _b === void 0 ? void 0 : _b.value.replace("https://www.youtube.com/watch?v=", "");
+    var videoUrl = baseViewerURL + youtubeVideoID;
+    document.getElementsByClassName("embed-video")[0].style.display = "none";
+    if (openMethod === "popup") {
+        openPopup(videoUrl);
+    }
+    else {
+        if (openMethod === "embed") {
+            document.getElementsByClassName("embed-video")[0].style.display = "block";
+            document.getElementById("embed-video-iframe").src = videoUrl;
+        }
+        else if (openMethod === "navigate") {
+            window.location.href = videoUrl;
+        }
+    }
 };
 var isEnter = function (event) {
     if (event.key === "Enter") {

@@ -1,25 +1,26 @@
-$primary_color: #c200c2;
-$background_color: #020022;
-$dark_background_color: #020012;
+// TODO: I really need to clean up this code quality, it is horrendous
+$primary_color: black;
+$background_color: white;
 
 html {
   position: relative;
-  background-color: $dark_background_color;
+  background-color: $background_color;
+}
 
-  body {
-    position: absolute;
-    background-color: $background_color !important;
-    color: $primary_color;
-  
-    width: 70%;
-    left: 15%;
-    top: 5%;
+body {
+  position: relative;
+  background-color: $background_color !important;
+  color: $primary_color;
 
-    .aligned-middle {
-      margin: auto;
-      width: 80%;
-    }
-  }
+  width: 90%;
+  left: 5%;
+}
+
+.aligned-middle {
+  position: relative;
+  margin: auto;
+  margin-top: 2em;
+  width: 80%;
 }
 
 .action-area {
@@ -33,4 +34,17 @@ html {
   input {
     width: calc(100% - 80px)
   }
+}
+
+.embed-video {
+  position: relative;
+  display: none;
+  margin-top: 4em;
+  width: 100%;
+  height: 80%;
+}
+
+#embed-video-iframe {
+  position: relative;
+  width: 100%;
 }
