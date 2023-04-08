@@ -1,4 +1,4 @@
-const baseViewerURL = "https://www.youtube-nocookie.com/embed";
+const baseViewerURL = "https://www.youtube-nocookie.com/embed/";
 
 (() => {
   const queryString = window.location.search;
@@ -10,9 +10,24 @@ const baseViewerURL = "https://www.youtube-nocookie.com/embed";
   }
 })();
 
+let openMethodDropdown = (): HTMLSelectElement => document.getElementById("open-method") as HTMLSelectElement;
+
 let openSearch = () => {
-  const youtubeVideoID = document.getElementById("youtube-link-input")?.innerText.replace("https://www.youtube.com/watch?v=", "");
-  openPopup(`${baseViewerURL}/${youtubeVideoID}`);
+  const openMethod = openMethodDropdown()?.value;
+  const youtubeVideoID = (document.getElementById("youtube-link-input") as HTMLInputElement)?.value.replace("https://www.youtube.com/watch?v=", "");
+  const videoUrl = baseViewerURL + youtubeVideoID;
+
+  (document.getElementsByClassName("embed-video")[0] as HTMLDivElement).style.display = "none";
+  if (openMethod === "popup") {
+    openPopup(videoUrl);
+  } else {
+    if(openMethod === "embed") {
+      (document.getElementsByClassName("embed-video")[0] as HTMLDivElement).style.display = "block";
+      (document.getElementById("embed-video-iframe") as HTMLIFrameElement).src = videoUrl;
+    }  else if (openMethod === "navigate") {
+      window.location.href = videoUrl;
+    }
+  }
 }
 
 let isEnter = (event: KeyboardEvent) => {

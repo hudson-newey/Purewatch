@@ -16,14 +16,43 @@
   </head>
 
   <body>
-    <h1 class="display-2">Purewatch</h1> <br>
-    
     <div class="aligned-middle">
+      <h1 class="display-3">Purewatch</h1>
+      <br />
       <h2>Input YouTube Link</h2>
 
       <div class="action-area">
-        <input id="youtube-link-input" type="text" class="form-control form-control-lg" onkeyup="isEnter(event);" placeholder="Input YouTube Link" />
-        <button type="submit" class="btn btn-lg btn-outline-primary" onclick="openSearch();">Open</button>
+        <input
+          id="youtube-link-input"
+          type="text"
+          class="form-control form-control-lg"
+          onkeyup="isEnter(event);"
+          placeholder="Input YouTube Link"
+        />
+        <button
+          type="submit"
+          class="btn btn-lg btn-outline-primary"
+          onclick="openSearch();"
+        >
+          Open
+        </button>
+
+        <div>
+          <select id="open-method" class="form-select h-100">
+            <option value="popup" selected>Popup</option>
+            <option value="embed">Embed</option>
+            <option value="navigate">Navigate</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="embed-video">
+        <iframe
+          id="embed-video-iframe"
+          src="https://www.youtube-nocookie.com/embed/"
+          frameborder="0"
+          height="500"
+        ></iframe>
       </div>
     </div>
   </body>
